@@ -20,7 +20,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: crud-php
-          image: quay.io/mmandam/crud-php:1.0
+          image: quay.io/mmandam0/crud-php:1.0
           imagePullPolicy: Always
           securityContext:
             allowPrivilegeEscalation: false
