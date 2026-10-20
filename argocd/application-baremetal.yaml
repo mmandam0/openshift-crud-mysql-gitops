@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crud-mysql-baremetal
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:mmandam0/openshift-crud-mysql-gitops.git
+    targetRevision: main
+    path: k8s
+  destination:
+    name: compact-baremetal
+    namespace: crud-mysql
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
